@@ -27,6 +27,8 @@ func take_attack():
 
 		# When hit by an attack, enemy will fall to a deactivated state
 		animationplayer.play("damage")
+		GLOBAL_FUNCTIONS.floating_text("Served", Color.RED, global_position)
+		 # Emit signal to player to take damage
 		animationplayer.queue("death")
 		is_dead = true
 		set_process(false)
