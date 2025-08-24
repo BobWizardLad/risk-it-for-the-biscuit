@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbuos31cbkaml" path="res://icon.svg" id="1_4jvqc"]
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="1_cnk1d"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="3_6elvi"]
+[ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="3_6elvi"]
 
 [node name="RylanDebugLevel" type="Node2D"]
 
@@ -16,3 +16,9 @@ position = Vector2(227, 129)
 
 [node name="Enemy" parent="." instance=ExtResource("3_6elvi")]
 position = Vector2(500, 141)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_6elvi")]
+position = Vector2(747, 208)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_6elvi")]
+position = Vector2(368, 286)
