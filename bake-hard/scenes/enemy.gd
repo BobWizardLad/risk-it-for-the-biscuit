@@ -29,6 +29,8 @@ func take_attack():
 		animationplayer.queue("death")
 		is_dead = true
 		set_process(false)
+		set_collision_layer(0)
+		set_collision_mask(0)
 
 func _process(delta: float) -> void:
 	if is_dead:
