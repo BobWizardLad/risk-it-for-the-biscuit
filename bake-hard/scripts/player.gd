@@ -5,12 +5,25 @@ extends CharacterBody2D
 
 @export var speed := 200
 
+var is_dead = false
+
+signal player_died
+
 func _ready():
     animation_player.play("idle")
     # rotation = -PI / 2 # Face up initially
     pass
 
+func take_attack():
+    if !is_dead:
+        print_debug("Player took an attack")
+        set_process(false)
+        set_process_input(false)
+        is_dead = true
+        player_died.emit()
+
 func _input(event):
+    if !is_dead:
         velocity = Vector2.ZERO
         if Input.is_action_pressed("ui_right"):
             velocity.x += 1
@@ -34,7 +47,6 @@ func _input(event):
             if result:
                 # You can access result.position, result.collider, etc.
                 if result.collider is Enemy:
-                    print("Hit an Enemy!")
                     result.collider.take_attack()
                 else:
                     print("Hit: ", result.collider)
@@ -45,7 +57,8 @@ func _input(event):
 func _process(delta):
     if velocity.length() > 0:
         velocity = velocity.normalized() * speed
-        position += velocity * delta
+        move_and_slide()
+    
     # Make the player face the mouse position at all times
     var mouse_pos = get_global_mouse_position()
     rotation = (mouse_pos - global_position).angle()
