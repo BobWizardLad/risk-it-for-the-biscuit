@@ -1,8 +1,6 @@
 class_name Enemy
 extends CharacterBody2D
 
-@export var signal_control: Node2D
-
 @onready var sprite = $Sprites
 @onready var animationplayer = $AnimationPlayer
 @onready var vision = $Vision

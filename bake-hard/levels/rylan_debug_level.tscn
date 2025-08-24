@@ -16,17 +16,14 @@ texture = ExtResource("1_4jvqc")
 [node name="Player" parent="." instance=ExtResource("1_cnk1d")]
 position = Vector2(227, 129)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("signal_control") instance=ExtResource("3_6elvi")]
+[node name="Enemy" parent="." instance=ExtResource("3_6elvi")]
 position = Vector2(500, 141)
-signal_control = NodePath("..")
 
-[node name="Enemy2" parent="." node_paths=PackedStringArray("signal_control") instance=ExtResource("3_6elvi")]
+[node name="Enemy2" parent="." instance=ExtResource("3_6elvi")]
 position = Vector2(747, 208)
-signal_control = NodePath("..")
 
-[node name="Enemy3" parent="." node_paths=PackedStringArray("signal_control") instance=ExtResource("3_6elvi")]
+[node name="Enemy3" parent="." instance=ExtResource("3_6elvi")]
 position = Vector2(368, 286)
-signal_control = NodePath("..")
 
 [node name="YouDied" type="RichTextLabel" parent="."]
 visible = false

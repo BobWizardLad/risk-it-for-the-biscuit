@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://da2jyfjm5wdhj"]
 
-[ext_resource type="TileSet" uid="uid://cng3xmlnvksy5" path="res://resources/monokai_greybox.tres" id="1_vc0aq"]
+[ext_resource type="TileSet" uid="uid://oj4gg2vi0hw7" path="res://resources/monokai_greybox.tres" id="1_vc0aq"]
 [ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="2_cvfti"]
 [ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_cvfti"]
 
