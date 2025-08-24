@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsrxn2yh60amq"]
+
+[ext_resource type="Script" uid="uid://cu0hgruh6b1n6" path="res://scripts/display_case.gd" id="1_c4s7v"]
+[ext_resource type="Texture2D" uid="uid://djpjiww5gi46j" path="res://assets/display_case.png" id="1_pqt5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4s7v"]
+size = Vector2(26, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqt5d"]
+size = Vector2(51, 109)
+
+[node name="DisplayCase" type="Node2D"]
+script = ExtResource("1_c4s7v")
+
+[node name="Collision" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Collision"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_c4s7v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pqt5d")
+
+[node name="StartArea" type="Area2D" parent="."]
+editor_description = "Interact at Layer 3 to detect and start the game."
+collision_layer = 0
+
+[node name="Shape" type="CollisionShape2D" parent="StartArea"]
+position = Vector2(15.5, 0.5)
+shape = SubResource("RectangleShape2D_pqt5d")
