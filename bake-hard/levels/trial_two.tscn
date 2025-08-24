@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://da2jyfjm5wdhj"]
+[gd_scene load_steps=4 format=4 uid="uid://da2jyfjm5wdhj"]
 
 [ext_resource type="TileSet" uid="uid://cng3xmlnvksy5" path="res://resources/monokai_greybox.tres" id="1_vc0aq"]
-[ext_resource type="PackedScene" uid="uid://c30idkh50it3p" path="res://scenes/enemy.tscn" id="2_cvfti"]
+[ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="2_cvfti"]
+[ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_cvfti"]
 
 [node name="TrialTwo" type="Node2D"]
 
@@ -62,3 +63,7 @@ position = Vector2(429, 753)
 
 [node name="Enemy15" parent="Enemies" instance=ExtResource("2_cvfti")]
 position = Vector2(371, 814)
+
+[node name="DisplayCase" parent="." instance=ExtResource("3_cvfti")]
+position = Vector2(240, 161)
+rotation = -3.14159

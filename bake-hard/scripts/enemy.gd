@@ -9,16 +9,17 @@ extends CharacterBody2D
 
 var is_dead = false
 
+@export var activation_source : Node2D
 @export var speed := 80
 
 func _ready() -> void:
 	set_process(false)
 	# Subscribe to parent's signal
-	if signal_control.has_signal("activate_enemies"):
-		signal_control.connect("activate_enemies", _activate)
+	if activation_source.has_signal("activate_enemies"):
+		activation_source.connect("activate_enemies", _activate)
 
-	if signal_control.has_signal("de_activate_enemies"):
-		signal_control.connect("de_activate_enemies", _deactivate)
+	if activation_source.has_signal("de_activate_enemies"):
+		activation_source.connect("de_activate_enemies", _deactivate)
 
 func take_attack():
 	if !is_dead and is_processing():
@@ -32,7 +33,7 @@ func take_attack():
 		set_collision_layer(0)
 		set_collision_mask(0)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_dead:
 		return
 
