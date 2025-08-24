@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animationplayer = $AnimationPlayer
 
 func _ready() -> void:
-    take_attack()
+    pass
 
 func take_attack():
     print_debug("Enemy took an attack")
