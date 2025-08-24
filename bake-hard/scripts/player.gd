@@ -1,10 +1,9 @@
 class_name Player
-extends Node2D
+extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var speed := 200
-var velocity := Vector2.ZERO
 
 func _ready():
     animation_player.play("idle")
