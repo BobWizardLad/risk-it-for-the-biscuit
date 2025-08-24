@@ -1,6 +1,8 @@
 class_name Enemy
 extends CharacterBody2D
 
+@export var signal_control: Node2D
+
 @onready var sprite = $Sprites
 @onready var animationplayer = $AnimationPlayer
 @onready var vision = $Vision
@@ -28,6 +30,8 @@ func take_attack():
 		animationplayer.queue("death")
 		is_dead = true
 		set_process(false)
+		set_collision_layer(0)
+		set_collision_mask(0)
 
 func _process(_delta: float) -> void:
 	if is_dead:
@@ -37,17 +41,27 @@ func _process(_delta: float) -> void:
 	var overlapping_bodies = vision.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body is Player:
-			# Face the player
-			look_at(body.global_position)
-			# Walk towards the player
-			var direction = (body.global_position - global_position).normalized()
-			velocity = direction * speed
-			move_and_slide()
+			var start_pos = global_position
+			var end_pos = body.global_position
+			var space_state = get_world_2d().direct_space_state
+			var ray_params = PhysicsRayQueryParameters2D.new()
+			ray_params.from = start_pos
+			ray_params.to = end_pos
+			ray_params.exclude = [self]
+			var result = space_state.intersect_ray(ray_params)
+			if result:
+				# You can access result.position, result.collider, etc.
+				if result.collider is Player:
+					var direction = (body.global_position - global_position).normalized()
+					# Face the player
+					look_at(body.global_position)
+					# Walk towards the player
+					velocity = direction * speed
+					move_and_slide()
 
-			var collision = get_last_slide_collision()
-			if collision and collision.get_collider() is Player:
-				collision.get_collider().take_attack()
-			pass
+					var collision = get_last_slide_collision()
+					if collision and collision.get_collider() is Player:
+						collision.get_collider().take_attack()
 
 func _activate() -> void:
 	print("Activating enemy")

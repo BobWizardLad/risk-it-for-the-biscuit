@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://bnva0ejsxwyn7"]
+[gd_scene load_steps=3 format=4 uid="uid://bnva0ejsxwyn7"]
 
 [ext_resource type="TileSet" uid="uid://cng3xmlnvksy5" path="res://resources/monokai_greybox.tres" id="1_0olx2"]
-[ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_xvfkt"]
-[ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="2_2iy0l"]
-[ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_6fbs3"]
-[ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="4_3ldgl"]
+[ext_resource type="PackedScene" uid="uid://c30idkh50it3p" path="res://scenes/enemy.tscn" id="2_2iy0l"]
 
 [node name="TrialOne" type="Node2D"]
 script = ExtResource("1_xvfkt")
@@ -22,72 +19,38 @@ navigation_enabled = false
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(81, 207)
-activation_source = NodePath("../..")
 
-[node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(239, 210)
-activation_source = NodePath("../..")
 
-[node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(82, 336)
-activation_source = NodePath("../..")
 
-[node name="Enemy4" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(144, 368)
-activation_source = NodePath("../..")
 
-[node name="Enemy5" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy5" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(80, 400)
-activation_source = NodePath("../..")
 
-[node name="Enemy6" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy6" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(463, 367)
-activation_source = NodePath("../..")
 
-[node name="Enemy7" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy7" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(848, 370)
-activation_source = NodePath("../..")
 
-[node name="Enemy8" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy8" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(817, 82)
-activation_source = NodePath("../..")
 
-[node name="Enemy9" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy9" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(624, 80)
-activation_source = NodePath("../..")
 
-[node name="Enemy10" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy10" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(720, 144)
-activation_source = NodePath("../..")
 
-[node name="Enemy11" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy11" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(1009, 78)
-activation_source = NodePath("../..")
 
-[node name="Enemy12" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
+[node name="Enemy12" parent="Enemies" instance=ExtResource("2_2iy0l")]
 position = Vector2(1072, 434)
-activation_source = NodePath("../..")
-
-[node name="DisplayCase" parent="." instance=ExtResource("3_6fbs3")]
-position = Vector2(79, 128)
-
-[node name="Player" parent="." instance=ExtResource("4_3ldgl")]
-position = Vector2(-269, 62)
-scale = Vector2(0.5, 0.5)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-scale = Vector2(2, 2)
-zoom = Vector2(2, 2)
-
-[node name="YouDied" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 206.0
-offset_top = 174.0
-offset_right = 281.0
-offset_bottom = 199.0
-scale = Vector2(10, 10)
-text = "You Died"
-
-[connection signal="level_begin" from="DisplayCase" to="." method="_on_activate_pressed"]

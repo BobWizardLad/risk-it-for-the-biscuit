@@ -4,6 +4,14 @@ signal activate_enemies
 signal de_activate_enemies
 
 @onready var death_text = $YouDied
+@onready var activate = $Activate
+@onready var de_activate = $DeActivate
+@onready var player = $Player
+
+func _ready() -> void:
+	activate.pressed.connect(_on_activate_pressed)
+	de_activate.pressed.connect(_on_de_activate_pressed)
+	player.player_died.connect(_on_player_player_died)
 
 func _on_activate_pressed() -> void:
 
