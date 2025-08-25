@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1uu3yvuuepkp"]
+
+[ext_resource type="Script" uid="uid://cvwwlovb4vh3c" path="res://scripts/shadow.gd" id="1_0rvn4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jqplm"]
+
+[node name="Shadow" type="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_jqplm")
+script = ExtResource("1_0rvn4")

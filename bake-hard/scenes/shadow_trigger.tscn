@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://clglams5l37cq"]
+
+[ext_resource type="Script" uid="uid://d2t2m0wsqiwpb" path="res://scripts/shadow_trigger.gd" id="1_ys6ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bnau"]
+
+[node name="ShadowTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ys6ig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3bnau")
