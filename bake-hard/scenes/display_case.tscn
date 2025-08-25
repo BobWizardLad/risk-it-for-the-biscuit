@@ -24,7 +24,18 @@ texture = ExtResource("1_pqt5d")
 [node name="StartArea" type="Area2D" parent="."]
 editor_description = "Interact at Layer 3 to detect and start the game."
 collision_layer = 0
+collision_mask = 15
 
 [node name="Shape" type="CollisionShape2D" parent="StartArea"]
 position = Vector2(15.5, 0.5)
 shape = SubResource("RectangleShape2D_pqt5d")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -68.0
+offset_top = -69.0
+offset_right = 70.0
+offset_bottom = -46.0
+text = "Interact to RISK IT"
+
+[connection signal="body_entered" from="StartArea" to="." method="_on_start_area_body_entered"]
+[connection signal="body_exited" from="StartArea" to="." method="_on_start_area_body_exited"]

@@ -76,6 +76,9 @@ position = Vector2(-151, 76)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
+[node name="DisplayCase" parent="." instance=ExtResource("3_6fbs3")]
+position = Vector2(79, 129)
+
 [node name="YouDied" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 206.0
@@ -84,8 +87,5 @@ offset_right = 281.0
 offset_bottom = 199.0
 scale = Vector2(10, 10)
 text = "You Died"
-
-[node name="DisplayCase" parent="." instance=ExtResource("3_6fbs3")]
-position = Vector2(79, 129)
 
 [connection signal="level_begin" from="DisplayCase" to="." method="_on_activate_pressed"]
