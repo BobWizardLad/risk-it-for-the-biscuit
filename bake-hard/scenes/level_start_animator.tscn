@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://0iycn2vfnvk7"]
+
+[node name="LevelStartAnimator" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
