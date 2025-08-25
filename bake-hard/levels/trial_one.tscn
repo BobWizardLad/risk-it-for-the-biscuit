@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://bnva0ejsxwyn7"]
+[gd_scene load_steps=8 format=4 uid="uid://bnva0ejsxwyn7"]
 
 [ext_resource type="TileSet" uid="uid://oj4gg2vi0hw7" path="res://resources/monokai_greybox.tres" id="1_0olx2"]
 [ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_6fbs3"]
 [ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="2_2iy0l"]
 [ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_6fbs3"]
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="4_3ldgl"]
+[ext_resource type="PackedScene" uid="uid://b1uu3yvuuepkp" path="res://scenes/shadow.tscn" id="6_5v33j"]
+[ext_resource type="PackedScene" uid="uid://clglams5l37cq" path="res://scenes/shadow_trigger.tscn" id="7_m7c1x"]
 
 [node name="TrialOne" type="Node2D"]
 script = ExtResource("1_6fbs3")
@@ -87,5 +89,54 @@ text = "You Died"
 
 [node name="DisplayCase" parent="." instance=ExtResource("3_6fbs3")]
 position = Vector2(79, 129)
+
+[node name="Shadows" type="Node2D" parent="."]
+
+[node name="Shadow" parent="Shadows" node_paths=PackedStringArray("shadow_triggers") instance=ExtResource("6_5v33j")]
+position = Vector2(655.5, 112.5)
+scale = Vector2(477, 157)
+shadow_triggers = [NodePath("../../ShadowTriggers/ShadowTrigger"), NodePath("../../ShadowTriggers/ShadowTrigger2")]
+
+[node name="Shadow2" parent="Shadows" node_paths=PackedStringArray("shadow_triggers") instance=ExtResource("6_5v33j")]
+position = Vector2(1025.5, 256)
+scale = Vector2(193, 444)
+shadow_triggers = [NodePath("../../ShadowTriggers/ShadowTrigger2"), NodePath("../../ShadowTriggers/ShadowTrigger3")]
+
+[node name="Shadow3" parent="Shadows" node_paths=PackedStringArray("shadow_triggers") instance=ExtResource("6_5v33j")]
+position = Vector2(658, 349.5)
+scale = Vector2(484, 259)
+shadow_triggers = [NodePath("../../ShadowTriggers/ShadowTrigger3"), NodePath("../../ShadowTriggers/ShadowTrigger4")]
+
+[node name="Shadow4" parent="Shadows" node_paths=PackedStringArray("shadow_triggers") instance=ExtResource("6_5v33j")]
+position = Vector2(210, 450.5)
+scale = Vector2(360, 319)
+shadow_triggers = [NodePath("../../ShadowTriggers/ShadowTrigger5"), NodePath("../../ShadowTriggers/ShadowTrigger4")]
+
+[node name="Shadow5" parent="Shadows" node_paths=PackedStringArray("shadow_triggers") instance=ExtResource("6_5v33j")]
+position = Vector2(353, 285.5)
+scale = Vector2(68, 123)
+shadow_triggers = [NodePath("../../ShadowTriggers/ShadowTrigger5"), NodePath("../../ShadowTriggers/ShadowTrigger4")]
+
+[node name="ShadowTriggers" type="Node2D" parent="."]
+
+[node name="ShadowTrigger" parent="ShadowTriggers" instance=ExtResource("7_m7c1x")]
+position = Vector2(393, 161)
+scale = Vector2(5.55568, 4.63314)
+
+[node name="ShadowTrigger5" parent="ShadowTriggers" instance=ExtResource("7_m7c1x")]
+position = Vector2(352, 205)
+scale = Vector2(4.76399, 5.38372)
+
+[node name="ShadowTrigger2" parent="ShadowTriggers" instance=ExtResource("7_m7c1x")]
+position = Vector2(915, 102)
+scale = Vector2(6.55659, 4.78851)
+
+[node name="ShadowTrigger3" parent="ShadowTriggers" instance=ExtResource("7_m7c1x")]
+position = Vector2(915, 453)
+scale = Vector2(6.55659, 4.78851)
+
+[node name="ShadowTrigger4" parent="ShadowTriggers" instance=ExtResource("7_m7c1x")]
+position = Vector2(402, 456)
+scale = Vector2(6.55659, 4.78851)
 
 [connection signal="level_begin" from="DisplayCase" to="." method="_on_activate_pressed"]
