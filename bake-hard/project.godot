@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GLOBAL_FUNCTIONS="*res://scenes/GLOBAL_FUNCTIONS.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 ui_left={
