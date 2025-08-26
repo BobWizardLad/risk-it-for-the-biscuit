@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var interact_label = $InteractLabel
+@onready var start_area = $StartArea
 
 signal level_begin
 signal start_break_cutscene
@@ -30,4 +31,5 @@ func _on_start_area_body_exited(body: Node) -> void:
 		player_in_area = false
 
 func _break_cutscene_finished() -> void:
+	start_area.monitoring = false
 	level_begin.emit()
