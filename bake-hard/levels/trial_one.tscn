@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnva0ejsxwyn7"]
+[gd_scene load_steps=9 format=4 uid="uid://bnva0ejsxwyn7"]
 
 [ext_resource type="TileSet" uid="uid://oj4gg2vi0hw7" path="res://resources/monokai_greybox.tres" id="1_0olx2"]
 [ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_6fbs3"]
 [ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="2_2iy0l"]
 [ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_6fbs3"]
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="4_3ldgl"]
-[ext_resource type="PackedScene" uid="uid://b1uu3yvuuepkp" path="res://scenes/shadow.tscn" id="6_5v33j"]
-[ext_resource type="PackedScene" uid="uid://clglams5l37cq" path="res://scenes/shadow_trigger.tscn" id="7_m7c1x"]
+[ext_resource type="PackedScene" uid="uid://b5nnmo0ay5p5i" path="res://scenes/level_start_animate.tscn" id="5_wmqr4"]
+[ext_resource type="PackedScene" path="res://scenes/shadow.tscn" id="6_5v33j"]
+[ext_resource type="PackedScene" path="res://scenes/shadow_trigger.tscn" id="7_m7c1x"]
 
-[node name="TrialOne" type="Node2D"]
+[node name="TrialOne" type="Node2D" node_paths=PackedStringArray("death_text")]
 script = ExtResource("1_6fbs3")
+death_text = NodePath("CanvasLayer/YouDied")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 editor_description = "Levels in this tileset are composed of four symbolic tiles:
@@ -79,9 +81,13 @@ position = Vector2(-151, 76)
 zoom = Vector2(2, 2)
 
 [node name="DisplayCase" parent="." instance=ExtResource("3_6fbs3")]
-position = Vector2(79, 129)
+position = Vector2(80, 128)
 
-[node name="YouDied" type="RichTextLabel" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelStartAnimate" parent="CanvasLayer" instance=ExtResource("5_wmqr4")]
+
+[node name="YouDied" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
 offset_left = 206.0
 offset_top = 174.0
@@ -89,13 +95,6 @@ offset_right = 281.0
 offset_bottom = 199.0
 scale = Vector2(10, 10)
 text = "You Died"
-
-[node name="Label" type="Label" parent="."]
-offset_left = -315.0
-offset_top = 231.0
-offset_right = -137.0
-offset_bottom = 254.0
-text = "Left Click - Interact/fire"
 
 [node name="Shadows" type="Node2D" parent="."]
 
@@ -146,4 +145,13 @@ scale = Vector2(6.55659, 4.78851)
 position = Vector2(402, 456)
 scale = Vector2(6.55659, 4.78851)
 
+[node name="TutorialShoot" type="Label" parent="."]
+offset_left = -315.0
+offset_top = 231.0
+offset_right = -137.0
+offset_bottom = 254.0
+text = "Left Click - Interact/fire"
+
 [connection signal="level_begin" from="DisplayCase" to="." method="_on_activate_pressed"]
+[connection signal="start_break_cutscene" from="DisplayCase" to="CanvasLayer/LevelStartAnimate" method="play_start_animation"]
+[connection signal="animation_finished" from="CanvasLayer/LevelStartAnimate" to="DisplayCase" method="_break_cutscene_finished"]

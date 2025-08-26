@@ -30,7 +30,7 @@ collision_mask = 15
 position = Vector2(15.5, 0.5)
 shape = SubResource("RectangleShape2D_pqt5d")
 
-[node name="Label" type="Label" parent="."]
+[node name="InteractLabel" type="Label" parent="."]
 offset_left = -68.0
 offset_top = -69.0
 offset_right = 70.0
