@@ -3,7 +3,7 @@ extends Node
 signal activate_enemies
 signal de_activate_enemies
 
-@onready var death_text = $YouDied
+@export var death_text: RichTextLabel
 @onready var player = $Player
 
 func _ready() -> void:

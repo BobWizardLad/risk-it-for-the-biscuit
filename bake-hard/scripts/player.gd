@@ -22,7 +22,7 @@ func take_attack():
         is_dead = true
         player_died.emit()
 
-func _unhandled_input(event):
+func _input(event):
     if !is_dead:
         velocity = Vector2.ZERO
         if Input.is_action_pressed("ui_right"):
