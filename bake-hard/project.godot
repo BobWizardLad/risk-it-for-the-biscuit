@@ -23,6 +23,10 @@ GLOBAL_FUNCTIONS="*res://scenes/GLOBAL_FUNCTIONS.tscn"
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Bake Hard"
+
 [input]
 
 ui_left={
