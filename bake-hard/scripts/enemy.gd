@@ -2,6 +2,7 @@ class_name Enemy
 extends CharacterBody2D
 
 @onready var sprite = $Sprites
+@onready var sprite_gnome = $Sprites/Sprite2D
 @onready var animationplayer = $AnimationPlayer
 @onready var vision = $Vision
 
@@ -65,8 +66,10 @@ func _process(_delta: float) -> void:
 
 func _activate() -> void:
 	print("Activating enemy")
+	sprite_gnome.frame = 1 # Activate gnomey arms
 	set_process(true)
 	
 func _deactivate() -> void:
 	print("Deactivating enemy")
+	sprite_gnome.frame = 0 # Deactivate gnomey arms :(
 	set_process(false)
