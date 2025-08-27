@@ -4,6 +4,7 @@ signal activate_enemies
 signal de_activate_enemies
 
 @export var death_text: RichTextLabel
+@export var reset_button: Button
 @onready var player = $Player
 
 func _ready() -> void:
@@ -23,3 +24,4 @@ func _on_de_activate_pressed() -> void:
 func _on_player_player_died() -> void:
 	de_activate_enemies.emit()
 	death_text.visible = true
+	reset_button.visible = true
