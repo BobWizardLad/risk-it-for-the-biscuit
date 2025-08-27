@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://oj4gg2vi0hw7"]
 
-[ext_resource type="Texture2D" uid="uid://cop6bketgwmnk" path="res://assets/monokai-tiles.png" id="1_la4d2"]
+[ext_resource type="Texture2D" uid="uid://cop6bketgwmnk" path="res://assets/sprites/monokai-tiles.png" id="1_la4d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2iy0l"]
 texture = ExtResource("1_la4d2")

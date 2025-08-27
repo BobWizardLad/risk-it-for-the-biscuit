@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b623nk6koqbhm"]
 
-[ext_resource type="Texture2D" path="res://assets/bread_crumb.tres" id="1_flhpc"]
+[ext_resource type="Texture2D" uid="uid://c4wvg4vxjy1t2" path="res://assets/sprites/bread_crumb.tres" id="1_flhpc"]
 
 [node name="HitEffect" type="CPUParticles2D"]
 texture_filter = 1

@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_6fbs3"]
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="4_3ldgl"]
 [ext_resource type="PackedScene" uid="uid://b5nnmo0ay5p5i" path="res://scenes/level_start_animate.tscn" id="5_wmqr4"]
-[ext_resource type="TileSet" uid="uid://2gymro8q61eq" path="res://resources/shadow_tiles.tres" id="7_m7c1x"]
+[ext_resource type="TileSet" uid="uid://bj8ioft363wrg" path="res://resources/shadow_tiles.tres" id="7_m7c1x"]
 [ext_resource type="PackedScene" uid="uid://c5q7d0q0bedlq" path="res://scenes/objectives_anchor.tscn" id="7_wp84y"]
-[ext_resource type="Script" uid="uid://b6dc6rlu6aerh" path="res://scripts/reset_button.gd" id="8_wp84y"]
+[ext_resource type="Script" path="res://scripts/reset_button.gd" id="8_wp84y"]
 
 [node name="TrialOne" type="Node2D" node_paths=PackedStringArray("death_text", "reset_button")]
 script = ExtResource("1_6fbs3")
