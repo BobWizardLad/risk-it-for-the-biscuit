@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://brb7lwgtn4w8c" path="res://assets/chefingham.png" id="3_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://b623nk6koqbhm" path="res://scenes/hit_effect.tscn" id="4_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://brauathg8bofk" path="res://assets/ping.mp3" id="4_tuyoq"]
-[ext_resource type="Script" uid="uid://byoba1k2sawpr" path="res://scripts/shadow_reveal.gd" id="6_tuyoq"]
+[ext_resource type="Script" path="res://scripts/shadow_reveal.gd" id="6_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
@@ -281,6 +281,7 @@ scale = Vector2(0.453125, 0.453125)
 texture = ExtResource("2_qlg0r")
 
 [node name="PlayerTexture" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-1.13249e-06, -2.38419e-07)
 rotation = -1.5708
 scale = Vector2(1.7, 1.7)
