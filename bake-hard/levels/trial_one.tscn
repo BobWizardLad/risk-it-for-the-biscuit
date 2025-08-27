@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnva0ejsxwyn7"]
+[gd_scene load_steps=9 format=4 uid="uid://bnva0ejsxwyn7"]
 
 [ext_resource type="TileSet" uid="uid://oj4gg2vi0hw7" path="res://resources/monokai_greybox.tres" id="1_0olx2"]
 [ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_6fbs3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="4_3ldgl"]
 [ext_resource type="PackedScene" uid="uid://b5nnmo0ay5p5i" path="res://scenes/level_start_animate.tscn" id="5_wmqr4"]
 [ext_resource type="TileSet" uid="uid://2gymro8q61eq" path="res://resources/shadow_tiles.tres" id="7_m7c1x"]
+[ext_resource type="PackedScene" uid="uid://c5q7d0q0bedlq" path="res://scenes/objectives_anchor.tscn" id="7_wp84y"]
 
 [node name="TrialOne" type="Node2D" node_paths=PackedStringArray("death_text")]
 script = ExtResource("1_6fbs3")
@@ -98,6 +99,8 @@ offset_right = 281.0
 offset_bottom = 199.0
 scale = Vector2(10, 10)
 text = "You Died"
+
+[node name="ObjectivesAnchor" parent="CanvasLayer" instance=ExtResource("7_wp84y")]
 
 [node name="TutorialShoot" type="Label" parent="."]
 offset_left = -315.0

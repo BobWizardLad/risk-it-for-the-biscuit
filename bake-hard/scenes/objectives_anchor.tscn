@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5q7d0q0bedlq"]
+
+[ext_resource type="Script" uid="uid://bewgm341j67yf" path="res://scripts/objectives_anchor.gd" id="1_ffv07"]
+
+[node name="ObjectivesAnchor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ffv07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Objectives:"
+
+[node name="Objectives" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Objectives"]
+layout_mode = 2
+
+[node name="Trash" type="RichTextLabel" parent="VBoxContainer/Objectives/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Throw out the trash"
+fit_content = true
+
+[node name="Weapon" type="RichTextLabel" parent="VBoxContainer/Objectives/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Get a real weapon"
+fit_content = true
+
+[node name="Flour" type="RichTextLabel" parent="VBoxContainer/Objectives/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Get the Faerie Flour"
+fit_content = true
