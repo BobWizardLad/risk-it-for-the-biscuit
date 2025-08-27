@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh0jp6fnt0a3j"]
+[gd_scene load_steps=14 format=3 uid="uid://bh0jp6fnt0a3j"]
 
 [ext_resource type="Script" uid="uid://c8fqyo2sh1ref" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cpd55xq3ekrnm" path="res://assets/arrow.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bdhiamyjeupsp" path="res://assets/GuySprite.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://b623nk6koqbhm" path="res://scenes/hit_effect.tscn" id="4_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://brauathg8bofk" path="res://assets/ping.mp3" id="4_tuyoq"]
+[ext_resource type="Script" uid="uid://byoba1k2sawpr" path="res://scripts/shadow_reveal.gd" id="6_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
@@ -380,3 +381,107 @@ emission_sphere_radius = 10.0
 
 [node name="AttackCharge" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="VisionRays" type="Node2D" parent="."]
+script = ExtResource("6_tuyoq")
+
+[node name="Sight1" type="RayCast2D" parent="VisionRays"]
+position = Vector2(0, 1)
+target_position = Vector2(320, -120)
+collision_mask = 17
+
+[node name="Sight2" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -110)
+collision_mask = 17
+
+[node name="Sight3" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -100)
+collision_mask = 17
+
+[node name="Sight4" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -90)
+collision_mask = 17
+
+[node name="Sight5" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -80)
+collision_mask = 17
+
+[node name="Sight6" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -70)
+collision_mask = 17
+
+[node name="Sight7" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -60)
+collision_mask = 17
+
+[node name="Sight8" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -50)
+collision_mask = 17
+
+[node name="Sight9" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -40)
+collision_mask = 17
+
+[node name="Sight10" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -30)
+collision_mask = 17
+
+[node name="Sight11" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -20)
+collision_mask = 17
+
+[node name="Sight12" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, -10)
+collision_mask = 17
+
+[node name="Sight13" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 0)
+collision_mask = 17
+
+[node name="Sight14" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 10)
+collision_mask = 17
+
+[node name="Sight15" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 20)
+collision_mask = 17
+
+[node name="Sight16" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 30)
+collision_mask = 17
+
+[node name="Sight17" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 40)
+collision_mask = 17
+
+[node name="Sight18" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 50)
+collision_mask = 17
+
+[node name="Sight19" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 60)
+collision_mask = 17
+
+[node name="Sight20" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 70)
+collision_mask = 17
+
+[node name="Sight21" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 80)
+collision_mask = 17
+
+[node name="Sight22" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 90)
+collision_mask = 17
+
+[node name="Sight23" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 100)
+collision_mask = 17
+
+[node name="Sight24" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 110)
+collision_mask = 17
+
+[node name="Sight25" type="RayCast2D" parent="VisionRays"]
+target_position = Vector2(320, 120)
+collision_mask = 17
