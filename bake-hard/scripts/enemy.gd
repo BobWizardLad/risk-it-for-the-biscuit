@@ -46,6 +46,8 @@ func _process(_delta: float) -> void:
 			var end_pos = body.global_position
 			var space_state = get_world_2d().direct_space_state
 			var ray_params = PhysicsRayQueryParameters2D.new()
+			# 0b00000000_00000000_00000000_00000011
+			ray_params.collision_mask = 3 # Collision mask 2, 1
 			ray_params.from = start_pos
 			ray_params.to = end_pos
 			ray_params.exclude = [self]
