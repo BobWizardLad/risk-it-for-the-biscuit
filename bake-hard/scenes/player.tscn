@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://brb7lwgtn4w8c" path="res://assets/sprites/chefingham.png" id="3_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://b623nk6koqbhm" path="res://scenes/hit_effect.tscn" id="4_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://brauathg8bofk" path="res://assets/sound/ping.mp3" id="4_tuyoq"]
-[ext_resource type="Script" path="res://scripts/shadow_reveal.gd" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://byoba1k2sawpr" path="res://scripts/shadow_reveal.gd" id="6_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 
@@ -416,174 +416,174 @@ collision_mask = 17
 target_position = Vector2(320, 120)
 collision_mask = 17
 
-[node name="Sight26" type="RayCast2D" parent="VisionRays"]
+[node name="TrueSight1" type="RayCast2D" parent="VisionRays"]
 target_position = Vector2(29, 16)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight27" type="RayCast2D" parent="VisionRays"]
 target_position = Vector2(26, 20)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight28" type="RayCast2D" parent="VisionRays"]
 target_position = Vector2(22, 24)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight29" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(21.5076, 24.2986)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight30" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(16.8264, 26.9606)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight31" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(12.1452, 29.6225)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight32" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(7.32784, 31.2938)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight33" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(3.36507, 31.8383)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight34" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-0.597704, 32.3828)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight35" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-5.68729, 32.0727)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight36" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-9.92229, 30.6357)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight37" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-14.1573, 29.1988)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight38" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-18.5284, 26.7712)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight39" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-21.9089, 24.2075)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight40" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-25.4254, 20.6531)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight41" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-27.9513, 16.9625)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight42" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-30.6132, 12.2813)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight43" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-32.4206, 6.47326)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight44" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-33.2373, 0.529106)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight45" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-32.9272, -4.56047)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight46" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-31.6264, -9.78617)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight47" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-29.3349, -15.148)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight48" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-26.9073, -19.5191)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight49" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-23.489, -24.0264)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight50" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-18.9439, -27.679)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight51" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-14.2627, -30.341)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight52" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-9.44534, -32.0123)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight53" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(-4.628, -33.6836)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight54" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(0.461586, -33.3735)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight55" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(6.67798, -32.2088)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight56" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(12.0398, -29.9173)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight57" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(17.5377, -26.6351)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight58" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(22.045, -23.2168)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight59" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(25.5615, -19.6624)
-collision_mask = 17
+collision_mask = 16
 
 [node name="Sight60" type="RayCast2D" parent="VisionRays"]
 rotation = 0.136541
 target_position = Vector2(28.0874, -15.9718)
-collision_mask = 17
+collision_mask = 16
