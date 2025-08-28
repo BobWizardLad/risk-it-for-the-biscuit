@@ -26,21 +26,3 @@ theme_override_constants/margin_left = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Objectives"]
 layout_mode = 2
-
-[node name="Trash" type="RichTextLabel" parent="VBoxContainer/Objectives/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-text = "Throw out the trash"
-fit_content = true
-
-[node name="Weapon" type="RichTextLabel" parent="VBoxContainer/Objectives/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-text = "Get a real weapon"
-fit_content = true
-
-[node name="Flour" type="RichTextLabel" parent="VBoxContainer/Objectives/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-text = "Get the Faerie Flour"
-fit_content = true
