@@ -248,14 +248,6 @@ zoom = Vector2(2, 2)
 
 [node name="DisplayCase" parent="." instance=ExtResource("3_6fbs3")]
 position = Vector2(160, 209)
-rotation = 4.71239
-
-[node name="InteractLabel" parent="DisplayCase" index="3"]
-offset_left = 74.0
-offset_top = -67.0
-offset_right = 212.0
-offset_bottom = -44.0
-rotation = 1.5708
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -309,5 +301,3 @@ tile_set = ExtResource("7_m7c1x")
 [connection signal="level_begin" from="DisplayCase" to="." method="_on_activate_pressed"]
 [connection signal="start_break_cutscene" from="DisplayCase" to="CanvasLayer/LevelStartAnimate" method="play_start_animation"]
 [connection signal="animation_finished" from="CanvasLayer/LevelStartAnimate" to="DisplayCase" method="_break_cutscene_finished"]
-
-[editable path="DisplayCase"]
