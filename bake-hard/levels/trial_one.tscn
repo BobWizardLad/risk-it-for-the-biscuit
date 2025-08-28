@@ -27,7 +27,6 @@ tile_set = ExtResource("1_0olx2")
 navigation_enabled = false
 
 [node name="Enemies" type="Node2D" parent="."]
-visible = false
 
 [node name="Enemy" parent="Enemies" node_paths=PackedStringArray("activation_source") instance=ExtResource("2_2iy0l")]
 position = Vector2(81, 207)
