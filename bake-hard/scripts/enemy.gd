@@ -8,8 +8,11 @@ extends CharacterBody2D
 
 var is_dead = false
 
-@export var activation_source : Node2D
+@export var activation_source : Node2D # Pull the level controller!
 @export var speed := 80
+
+## Emitted when an enemy is downed
+signal enemy_death
 
 func _ready() -> void:
 	set_process(false)
@@ -19,6 +22,10 @@ func _ready() -> void:
 
 	if activation_source.has_signal("de_activate_enemies"):
 		activation_source.connect("de_activate_enemies", _deactivate)
+	
+	if activation_source.has_method("_on_enemy_death"):
+		print("enemy connected")
+		enemy_death.connect(activation_source._on_enemy_death)
 
 func take_attack():
 	if !is_dead and is_processing():
@@ -27,9 +34,10 @@ func take_attack():
 		# When hit by an attack, enemy will fall to a deactivated state
 		animationplayer.play("damage")
 		GLOBAL_FUNCTIONS.floating_text("Served", Color.RED, global_position)
-		 # Emit signal to player to take damage
+		# Emit signal to player to take damage
 		animationplayer.queue("death")
 		is_dead = true
+		enemy_death.emit() # Tell the map you are dead!
 		set_process(false)
 		set_collision_layer(0)
 		set_collision_mask(0)
