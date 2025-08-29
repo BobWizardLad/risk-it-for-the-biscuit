@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwvirywm418q5"]
+
+[ext_resource type="Script" uid="uid://b62544mn3q1n5" path="res://scripts/pickup.gd" id="1_7cqbe"]
+[ext_resource type="Texture2D" uid="uid://w06xe0m62p61" path="res://assets/sprites/bread.png" id="1_pg2rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cqbe"]
+atlas = ExtResource("1_pg2rt")
+region = Rect2(112, 0, 56, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyxxy"]
+radius = 29.0
+
+[node name="Pickup" type="Sprite2D"]
+texture = SubResource("AtlasTexture_7cqbe")
+offset = Vector2(2, 2)
+script = ExtResource("1_7cqbe")
+
+[node name="PickupRange" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRange"]
+shape = SubResource("CircleShape2D_gyxxy")
+
+[connection signal="body_entered" from="PickupRange" to="." method="_on_player_picked"]
