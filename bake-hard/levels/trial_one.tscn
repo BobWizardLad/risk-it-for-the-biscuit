@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bnva0ejsxwyn7"]
+[gd_scene load_steps=12 format=4 uid="uid://bnva0ejsxwyn7"]
 
 [ext_resource type="TileSet" uid="uid://oj4gg2vi0hw7" path="res://resources/monokai_greybox.tres" id="1_0olx2"]
 [ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_6fbs3"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://b5nnmo0ay5p5i" path="res://scenes/level_start_animate.tscn" id="5_wmqr4"]
 [ext_resource type="TileSet" uid="uid://bj8ioft363wrg" path="res://resources/shadow_tiles.tres" id="7_m7c1x"]
 [ext_resource type="PackedScene" uid="uid://c5q7d0q0bedlq" path="res://scenes/objectives_anchor.tscn" id="7_wp84y"]
+[ext_resource type="Script" uid="uid://b6dc6rlu6aerh" path="res://scripts/reset_button.gd" id="8_wp84y"]
 [ext_resource type="PackedScene" uid="uid://b5a53tpf5go7j" path="res://scenes/door.tscn" id="10_4b473"]
-[ext_resource type="Script" path="res://scripts/reset_button.gd" id="8_wp84y"]
-[ext_resource type="PackedScene" uid="uid://bwvirywm418q5" path="res://scenes/pickup.tscn" id="10_4b473"]
+[ext_resource type="PackedScene" uid="uid://bwvirywm418q5" path="res://scenes/pickup.tscn" id="10_jnffy"]
 
 [node name="TrialOne" type="Node2D" node_paths=PackedStringArray("death_text", "gnome_count", "reset_button", "objective_anchor")]
 script = ExtResource("1_6fbs3")
@@ -39,27 +39,6 @@ activation_source = NodePath("../..")
 
 [node name="Door2" parent="Doors" node_paths=PackedStringArray("activation_source") instance=ExtResource("10_4b473")]
 position = Vector2(304, 64)
-activation_source = NodePath("../..")
-
-[node name="Door3" parent="Doors" node_paths=PackedStringArray("activation_source") instance=ExtResource("10_4b473")]
-position = Vector2(400, 160)
-activation_source = NodePath("../..")
-
-[node name="Door4" parent="Doors" node_paths=PackedStringArray("activation_source") instance=ExtResource("10_4b473")]
-position = Vector2(352, 272)
-rotation = 1.57079
-activation_source = NodePath("../..")
-
-[node name="Door5" parent="Doors" node_paths=PackedStringArray("activation_source") instance=ExtResource("10_4b473")]
-position = Vector2(400, 448)
-activation_source = NodePath("../..")
-
-[node name="Door6" parent="Doors" node_paths=PackedStringArray("activation_source") instance=ExtResource("10_4b473")]
-position = Vector2(912, 448)
-activation_source = NodePath("../..")
-
-[node name="Door7" parent="Doors" node_paths=PackedStringArray("activation_source") instance=ExtResource("10_4b473")]
-position = Vector2(912, 96)
 activation_source = NodePath("../..")
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -334,7 +313,7 @@ offset_right = -137.0
 offset_bottom = 254.0
 text = "Left Click - Interact/fire"
 
-[node name="Pickup" parent="." instance=ExtResource("10_4b473")]
+[node name="Pickup" parent="." instance=ExtResource("10_jnffy")]
 position = Vector2(960, 1249)
 scale = Vector2(0.5, 0.5)
 pickup_name = "biscuit"
