@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4xfgkfx5kcd5"]
+
+[ext_resource type="Script" uid="uid://dkntnoyyht7nk" path="res://scripts/audio_variety_player.gd" id="1_2wjvw"]
+[ext_resource type="AudioStream" uid="uid://cbom3ls4skf7n" path="res://assets/sound/fall2-224066.mp3" id="2_ew5i1"]
+[ext_resource type="AudioStream" uid="uid://vm5ny782bwbo" path="res://assets/sound/fall1-224054.mp3" id="3_x0qdo"]
+
+[node name="AudioVarietyPlayer" type="AudioStreamPlayer2D"]
+volume_db = -8.624
+script = ExtResource("1_2wjvw")
+audio_catalog = Array[AudioStream]([ExtResource("2_ew5i1"), ExtResource("3_x0qdo")])
