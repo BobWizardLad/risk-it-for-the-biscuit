@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpnsb7bde5tb4"]
+[gd_scene load_steps=6 format=3 uid="uid://dpnsb7bde5tb4"]
 
 [ext_resource type="Texture2D" uid="uid://cbuos31cbkaml" path="res://icon.svg" id="1_4jvqc"]
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="1_cnk1d"]
 [ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_ref54"]
 [ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="3_6elvi"]
-[ext_resource type="PackedScene" uid="uid://b1uu3yvuuepkp" path="res://scenes/shadow.tscn" id="5_e2g3h"]
-[ext_resource type="PackedScene" uid="uid://clglams5l37cq" path="res://scenes/shadow_trigger.tscn" id="6_3wx1a"]
+[ext_resource type="PackedScene" uid="uid://b5a53tpf5go7j" path="res://scenes/door.tscn" id="5_57102"]
 
 [node name="RylanDebugLevel" type="Node2D"]
 script = ExtResource("1_ref54")
@@ -55,11 +54,5 @@ offset_bottom = 598.0
 scale = Vector2(2, 2)
 text = "De-Activate"
 
-[node name="Shadow" parent="." node_paths=PackedStringArray("shadow_triggers") instance=ExtResource("5_e2g3h")]
-position = Vector2(124, 177.5)
-scale = Vector2(166, 219)
-shadow_triggers = [NodePath("../ShadowTrigger")]
-
-[node name="ShadowTrigger" parent="." instance=ExtResource("6_3wx1a")]
-position = Vector2(122, 342)
-scale = Vector2(7.12961, 5.54001)
+[node name="Door" parent="." instance=ExtResource("5_57102")]
+position = Vector2(68, 265)
