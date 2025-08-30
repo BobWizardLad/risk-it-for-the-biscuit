@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var speed := 200
+@export var show_white_line := true
 
 var is_dead = false
 var finished_charging = false
@@ -58,15 +59,27 @@ func _input(event):
 				else:
 					print("Hit: ", result.collider)
 
+				# Play attack animation
+				animation_player.play("fire")
+				animation_player.queue("idle")
+
 				# Spawn particle effect at hit position
 				var particles = preload("res://scenes/hit_effect.tscn").instantiate()
 				particles.global_position = result.position
 				get_tree().current_scene.add_child(particles)
 				particles.emitting = true
 				particles.finished.connect(func(): particles.queue_free())
+				if show_white_line:
+					# Draw a white line for a brief moment
+					var line = Line2D.new()
+					line.width = 2
+					line.default_color = Color.WHITE
+					line.add_point(start_pos)
+					line.add_point(result.position if result else end_pos)
+					get_tree().current_scene.add_child(line)
+					await get_tree().create_timer(0.1).timeout
+					line.queue_free()
 			
-			animation_player.play("fire")
-			animation_player.queue("idle")
 			finished_charging = false
 		elif event.is_action_released("fire"):
 			finished_charging = false
