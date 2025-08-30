@@ -8,8 +8,11 @@ extends CharacterBody2D
 
 var is_dead = false
 
-@export var activation_source : Node2D
+@export var activation_source : Node2D # Pull the level controller!
 @export var speed := 80
+
+## Emitted when an enemy is downed
+signal enemy_death
 
 func _ready() -> void:
 	set_process(false)
@@ -19,6 +22,10 @@ func _ready() -> void:
 
 	if activation_source.has_signal("de_activate_enemies"):
 		activation_source.connect("de_activate_enemies", _deactivate)
+	
+	if activation_source.has_method("_on_enemy_death"):
+		print("enemy connected")
+		enemy_death.connect(activation_source._on_enemy_death)
 
 func take_attack():
 	if !is_dead and is_processing():
@@ -26,10 +33,11 @@ func take_attack():
 
 		# When hit by an attack, enemy will fall to a deactivated state
 		animationplayer.play("damage")
-		GLOBAL_FUNCTIONS.floating_text("Served", Color.RED, global_position)
-		 # Emit signal to player to take damage
+		# GLOBAL_FUNCTIONS.floating_text("Served", Color.RED, global_position)
+		# Emit signal to player to take damage
 		animationplayer.queue("death")
 		is_dead = true
+		enemy_death.emit() # Tell the map you are dead!
 		set_process(false)
 		set_collision_layer(0)
 		set_collision_mask(0)
@@ -46,6 +54,8 @@ func _process(_delta: float) -> void:
 			var end_pos = body.global_position
 			var space_state = get_world_2d().direct_space_state
 			var ray_params = PhysicsRayQueryParameters2D.new()
+			# 0b00000000_00000000_00000000_00000011
+			ray_params.collision_mask = 3 # Collision mask 2, 1
 			ray_params.from = start_pos
 			ray_params.to = end_pos
 			ray_params.exclude = [self]

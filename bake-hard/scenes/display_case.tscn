@@ -10,11 +10,12 @@ size = Vector2(26, 59)
 size = Vector2(51, 109)
 
 [node name="DisplayCase" type="Node2D"]
+rotation = 4.71239
 script = ExtResource("1_c4s7v")
 
-[node name="Collision" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Shape" type="CollisionShape2D" parent="Collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_c4s7v")
 
@@ -31,11 +32,13 @@ position = Vector2(15.5, 0.5)
 shape = SubResource("RectangleShape2D_pqt5d")
 
 [node name="InteractLabel" type="Label" parent="."]
-offset_left = -68.0
-offset_top = -69.0
-offset_right = 70.0
-offset_bottom = -46.0
-text = "Interact to RISK IT"
+offset_left = 80.0
+offset_top = -66.0
+offset_right = 218.0
+offset_bottom = -43.0
+rotation = 1.5708
+text = "Fire to START"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="StartArea" to="." method="_on_start_area_body_entered"]
 [connection signal="body_exited" from="StartArea" to="." method="_on_start_area_body_exited"]

@@ -45,6 +45,8 @@ func _input(event):
 			var end_pos = start_pos + Vector2.RIGHT.rotated(rotation) * ray_length
 			var space_state = get_world_2d().direct_space_state
 			var ray_params = PhysicsRayQueryParameters2D.new()
+			# 0b00000000_00000000_00000000_00000101
+			ray_params.collision_mask = 5 # Collide with walls and enemies
 			ray_params.from = start_pos
 			ray_params.to = end_pos
 			ray_params.exclude = [self]
