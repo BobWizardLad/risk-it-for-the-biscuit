@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/psh1-224068.mp3-38388c30b0a00b111779aed37d6c7
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

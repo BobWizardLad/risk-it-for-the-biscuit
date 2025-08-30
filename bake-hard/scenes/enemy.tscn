@@ -1,7 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dncudyxv0p3em"]
+[gd_scene load_steps=15 format=3 uid="uid://dncudyxv0p3em"]
 
 [ext_resource type="Script" uid="uid://bg7c74o1osn77" path="res://scripts/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://d2smaefiambua" path="res://assets/sprites/gnome.png" id="2_md0e3"]
+[ext_resource type="PackedScene" uid="uid://c4xfgkfx5kcd5" path="res://scenes/audio_variety_player.tscn" id="3_4ra3w"]
+[ext_resource type="AudioStream" uid="uid://cbom3ls4skf7n" path="res://assets/sound/fall2-224066.mp3" id="4_xwavj"]
+[ext_resource type="AudioStream" uid="uid://vm5ny782bwbo" path="res://assets/sound/fall1-224054.mp3" id="5_nenq2"]
+[ext_resource type="AudioStream" uid="uid://cu40xfuaotf4w" path="res://assets/sound/im-a-gnome-meme-sound-effect-woo.mp3" id="6_md484"]
+[ext_resource type="AudioStream" uid="uid://cdkycagy3pqqj" path="res://assets/sound/slap-hurt-pain-sound-effect-262618.mp3" id="7_ipns3"]
+[ext_resource type="AudioStream" uid="uid://btw4joc7oju2a" path="res://assets/sound/little-creature-hurt-sound-295405.mp3" id="8_8qclf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
 radius = 13.0
@@ -49,6 +55,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0.4, 0.4, 1), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitAudioVarietyPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_audio_stream"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_c4w8v"]
 resource_name = "death"
@@ -77,6 +97,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathAudioVarietyPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_audio_stream"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c4w8v"]
@@ -119,3 +153,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 shape = SubResource("CircleShape2D_4ra3w")
+
+[node name="DeathAudioVarietyPlayer" parent="." instance=ExtResource("3_4ra3w")]
+audio_catalog = Array[AudioStream]([ExtResource("5_nenq2"), ExtResource("4_xwavj")])
+
+[node name="HitAudioVarietyPlayer" parent="." instance=ExtResource("3_4ra3w")]
+audio_catalog = Array[AudioStream]([ExtResource("6_md484"), ExtResource("7_ipns3"), ExtResource("8_8qclf")])

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4xfgkfx5kcd5"]
+
+[ext_resource type="Script" uid="uid://dkntnoyyht7nk" path="res://scripts/audio_variety_player.gd" id="1_2wjvw"]
+
+[node name="AudioVarietyPlayer" type="AudioStreamPlayer2D"]
+volume_db = -8.624
+script = ExtResource("1_2wjvw")
