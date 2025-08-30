@@ -1,22 +1,32 @@
-[gd_scene load_steps=11 format=4 uid="uid://bnva0ejsxwyn7"]
+[gd_scene load_steps=14 format=4 uid="uid://bnva0ejsxwyn7"]
 
 [ext_resource type="TileSet" uid="uid://oj4gg2vi0hw7" path="res://resources/monokai_greybox.tres" id="1_0olx2"]
 [ext_resource type="Script" uid="uid://c6k1i4k44yme3" path="res://scripts/level_control.gd" id="1_6fbs3"]
 [ext_resource type="PackedScene" uid="uid://dncudyxv0p3em" path="res://scenes/enemy.tscn" id="2_2iy0l"]
+[ext_resource type="AudioStream" uid="uid://dlof3bmhl2vnh" path="res://assets/sound/lurking_gnomes.wav" id="2_x3s85"]
 [ext_resource type="PackedScene" uid="uid://dsrxn2yh60amq" path="res://scenes/display_case.tscn" id="3_6fbs3"]
+[ext_resource type="AudioStream" uid="uid://cka1aap78ixre" path="res://assets/sound/dancing_gnomes.mp3" id="3_ta0ue"]
 [ext_resource type="PackedScene" uid="uid://bh0jp6fnt0a3j" path="res://scenes/player.tscn" id="4_3ldgl"]
+[ext_resource type="AudioStream" uid="uid://blkqsbdvvyuea" path="res://assets/sound/lurking_baker.mp3" id="4_tkma4"]
 [ext_resource type="PackedScene" uid="uid://b5nnmo0ay5p5i" path="res://scenes/level_start_animate.tscn" id="5_wmqr4"]
 [ext_resource type="TileSet" uid="uid://bj8ioft363wrg" path="res://resources/shadow_tiles.tres" id="7_m7c1x"]
 [ext_resource type="PackedScene" uid="uid://c5q7d0q0bedlq" path="res://scenes/objectives_anchor.tscn" id="7_wp84y"]
 [ext_resource type="Script" path="res://scripts/reset_button.gd" id="8_wp84y"]
 [ext_resource type="PackedScene" uid="uid://bwvirywm418q5" path="res://scenes/pickup.tscn" id="10_4b473"]
 
-[node name="TrialOne" type="Node2D" node_paths=PackedStringArray("death_text", "gnome_count", "reset_button", "objective_anchor")]
+[node name="TrialOne" type="Node2D" node_paths=PackedStringArray("death_text", "gnome_count", "reset_button", "objective_anchor", "jukebox")]
 script = ExtResource("1_6fbs3")
 death_text = NodePath("CanvasLayer/YouDied")
 gnome_count = NodePath("CanvasLayer/Gnome_Count")
 reset_button = NodePath("CanvasLayer/Reset")
 objective_anchor = NodePath("CanvasLayer/ObjectivesAnchor")
+jukebox = NodePath("Jukebox")
+passive_music_track = ExtResource("2_x3s85")
+active_music_track = ExtResource("3_ta0ue")
+aftermath_music_track = ExtResource("4_tkma4")
+
+[node name="Jukebox" type="AudioStreamPlayer" parent="."]
+volume_db = -1.7
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 editor_description = "Levels in this tileset are composed of four symbolic tiles:
@@ -311,6 +321,7 @@ tile_map_data = PackedByteArray("AAA1AAUAAAAAAAAAAAA0AAQAAAAAAAAAAAA0AAUAAAAAAAA
 tile_set = ExtResource("7_m7c1x")
 
 [connection signal="level_begin" from="DisplayCase" to="." method="_on_activate_pressed"]
+[connection signal="start_break_cutscene" from="DisplayCase" to="." method="_on_activate_custscene_begin"]
 [connection signal="start_break_cutscene" from="DisplayCase" to="CanvasLayer/LevelStartAnimate" method="play_start_animation"]
 [connection signal="animation_finished" from="CanvasLayer/LevelStartAnimate" to="DisplayCase" method="_break_cutscene_finished"]
 [connection signal="picked_up" from="Pickup" to="." method="_on_pickup_picked_up"]
