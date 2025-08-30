@@ -9,8 +9,8 @@ var rng : RandomNumberGenerator
 
 func _ready() -> void:
     rng = RandomNumberGenerator.new()
-    rng.seed = int(Time.get_date_string_from_system())
+    rng.randomize()
 
 func play_audio_stream() -> void:
-    stream = audio_catalog[rng.randi_range(0, 1)]
+    stream = audio_catalog[rng.randi_range(-1, audio_catalog.size() - 1)] # Play any track in the catalog
     play()
